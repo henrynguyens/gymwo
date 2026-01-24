@@ -1,0 +1,73 @@
+.programs {
+    padding: 100px 0;
+    background-color: var(--background);
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.outline {
+    -webkit-text-stroke: 1px var(--foreground);
+    color: transparent;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 500px;
+    gap: 1rem;
+}
+
+.item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.item:hover {
+    flex-grow: 2;
+    /* If we used flex, but grid is simpler for rigid columns. Let's stick to opacity/scale on hover. */
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    transition: background 0.3s;
+}
+
+.item:hover .overlay {
+    background: rgba(201, 253, 2, 0.2);
+    /* Tint with primary color */
+}
+
+.itemName {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .item {
+        height: 300px;
+    }
+}

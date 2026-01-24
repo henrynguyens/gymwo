@@ -1,0 +1,141 @@
+.section {
+    padding: 120px 0;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    color: #000;
+}
+
+.points {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.point {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.pointIcon {
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    border-radius: 50%;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.pointTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #000;
+}
+
+.pointDesc {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Visual */
+.visual {
+    display: flex;
+    justify-content: center;
+}
+
+.imageCard {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 550px;
+    border-radius: 40px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.glassOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.scanLine {
+    width: 80%;
+    height: 2px;
+    background-color: #c9fd02;
+    /* Use our neon accent */
+    box-shadow: 0 0 10px #c9fd02;
+    animation: scan 2s infinite ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.scanLabel {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .point {
+        justify-content: center;
+        /* Center align items for mobile */
+        text-align: left;
+        /* Keep text left aligned? Or center? usually left is better for readability */
+    }
+}

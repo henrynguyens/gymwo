@@ -1,0 +1,72 @@
+.section {
+    padding: 120px 0;
+    background-color: #000;
+    /* Black background */
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    /* Screenshot has italic text "24/7 Premium" */
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: #111;
+    border: 1px solid #222;
+    padding: 2.5rem;
+    border-radius: 24px;
+    text-align: left;
+    transition: border-color 0.3s;
+}
+
+.card:hover {
+    border-color: #c9fd02;
+    /* Neon accent */
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    background-color: #222;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}

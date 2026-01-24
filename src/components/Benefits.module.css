@@ -1,0 +1,79 @@
+.section {
+    padding: 100px 0;
+    background-color: #fafafa;
+    /* Light gray background contrast */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Strikethrough effect on "Your Journey"? screenshot is blurry but let's just make it bold */
+.title span {
+    text-decoration: line-through;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #888;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #000;
+}
+
+.cardDesc {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}

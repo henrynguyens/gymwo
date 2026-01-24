@@ -1,0 +1,116 @@
+.section {
+    padding: 120px 0;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.mockupContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard {
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+.dashHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.dashStats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.statBox {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.val {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #000;
+}
+
+.label {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.dashImage img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+    /* Gray-600 */
+}
+
+/* Make "Nutrition" black per screenshot logic? Screenshot has "Smart Nutrition" */
+/* Let's stick to standard text hierarchy. */
+
+.text {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.list li::before {
+    content: "✓";
+    color: #000;
+    font-weight: 800;
+}
