@@ -1,9 +1,9 @@
 import styles from './Programs.module.css';
 
 const programs = [
-    { name: "Strength", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop" },
-    { name: "Cardio", image: "https://images.unsplash.com/photo-1538805060504-d141e4322797?q=80&w=1287&auto=format&fit=crop" },
-    { name: "Yoga", image: "https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=1471&auto=format&fit=crop" }
+    { name: "Strength", image: "/images/programs-1.jpg" },
+    { name: "Cardio", image: "/images/programs-1.jpg" },
+    { name: "Yoga", image: "/images/programs-1.jpg" }
 ];
 
 const Programs = () => {

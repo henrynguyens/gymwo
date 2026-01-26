@@ -22,7 +22,7 @@ const Nutrition = () => {
                             </div>
                         </div>
                         <div className={styles.dashImage}>
-                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1760&auto=format&fit=crop" alt="Food" />
+                            <img src="/images/nutrition-1.jpg" alt="Food" />
                         </div>
                     </div>
                 </div>

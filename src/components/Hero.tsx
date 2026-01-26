@@ -37,19 +37,18 @@ const Hero = () => {
                         <div className={styles.notch}></div>
                         <div className={styles.screen}>
                             {/* Placeholder for App Interface */}
-                            <div className={styles.appHeader}>
-                                <div className={styles.appAvatar}></div>
-                                <span>Hello, Guest</span>
+                            <div className={styles.goalHeader}>
+                                <span className={styles.goalHeaderText}>Today's Goal</span>
+                                <span className={styles.menuIcon}>≡</span>
                             </div>
-                            <div className={styles.appStat}>
-                                <span className={styles.statVal}>10,245</span>
-                                <span className={styles.statLabel}>Steps</span>
-                            </div>
-                            <div className={styles.appGraph}></div>
-                            <button className={styles.appBtn}>Start Workout</button>
-                            {/* Image overlay for realism if we had one, else CSS UI */}
-                            <div className={styles.appImageCtn}>
-                                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1740&auto=format&fit=crop" alt="Workout" className={styles.appImage} />
+
+                            <div className={styles.goalCard}>
+                                <img src="/images/hero-1.jpg" alt="Goal" className={styles.goalImage} />
+                                <div className={styles.goalOverlay}>
+                                    <span className={styles.levelTag}>Level 1</span>
+                                    <h3 className={styles.goalTitle}>5-Day Strength Boost</h3>
+                                    <button className={styles.startBtn}>Start Now</button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -29,7 +29,7 @@ const Analysis = () => {
                 <div className={styles.visual}>
                     <div className={styles.imageCard}>
                         {/* Placeholder for person being analyzed */}
-                        <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1740&auto=format&fit=crop" alt="Analysis" className={styles.image} />
+                        <img src="/images/analysis-1.jpg" alt="Analysis" className={styles.image} />
 
                         {/* Overlay UI Mockup */}
                         <div className={styles.glassOverlay}>

@@ -8,22 +8,13 @@ const Goals = () => {
 
                 <div className={styles.grid}>
                     <div className={styles.card}>
-                        <img src="https://images.unsplash.com/photo-1574680096141-1cddd32e04ca?q=80&w=1760&auto=format&fit=crop" alt="Workout" className={styles.image} />
-                        <div className={styles.overlay}>
-                            <h3>Build Muscle</h3>
-                        </div>
+                        <img src="/images/hero-2.jpg" alt="Goal 1" className={styles.image} />
                     </div>
                     <div className={styles.card}>
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" alt="Portrait" className={styles.image} />
-                        <div className={styles.overlay}>
-                            <h3>Lose Weight</h3>
-                        </div>
+                        <img src="/images/goals-1.jpg" alt="Goal 2" className={styles.image} />
                     </div>
                     <div className={styles.card}>
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1288&auto=format&fit=crop" alt="Portrait 2" className={styles.image} />
-                        <div className={styles.overlay}>
-                            <h3>Tone Up</h3>
-                        </div>
+                        <img src="/images/programs-1.jpg" alt="Goal 3" className={styles.image} />
                     </div>
                 </div>
             </div>

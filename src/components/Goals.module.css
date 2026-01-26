@@ -12,17 +12,21 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    /* Ensure side padding on small screens */
 }
 
 .card {
     position: relative;
-    height: 450px;
-    border-radius: 24px;
+    aspect-ratio: 1 / 1.2;
+    border-radius: 40px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
@@ -33,24 +37,17 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: scale 0.5s;
+    transition: scale 0.5s ease;
 }
 
 .card:hover .image {
     scale: 1.05;
 }
 
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: #fff;
-}
+/* Overlay removed to match user reference */
 
-.overlay h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
