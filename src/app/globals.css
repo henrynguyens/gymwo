@@ -1,11 +1,12 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --primary: #c9fd02; /* Neon Lime - popular in gym aesthetics */
+  --primary: #c9fd02;
+  /* Neon Lime - popular in gym aesthetics */
   --primary-foreground: #000000;
   --secondary: #1f1f1f;
   --accent: #2a2a2a;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-urbanist), sans-serif;
 }
 
 * {

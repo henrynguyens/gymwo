@@ -1,8 +1,8 @@
 .footer {
-    background-color: var(--background);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 80px 0 0 0;
-    color: #888;
+    background-color: #fff;
+    border-top: none;
+    padding: 120px 0 20px;
+    color: #1a1a1a;
 }
 
 .container {
@@ -12,38 +12,37 @@
 }
 
 .logo {
-    color: var(--foreground);
+    color: #1a1a1a;
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
+    font-family: var(--font-urbanist);
 }
 
-.bigHeadline {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 60px;
+/* Brand Column */
+.brandColumn {
+    max-width: 300px;
 }
 
-.bigHeadline h2 {
-    font-size: 5rem;
-    font-weight: 900;
-    line-height: 0.9;
+.description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: #888;
     text-transform: uppercase;
-    letter-spacing: -0.05em;
-    color: #000;
-    position: relative;
 }
 
-/* Strikethrough effect on "Your Temple"? Per visual. */
-.bigHeadline h2:last-child {
-    text-decoration: line-through;
-    text-decoration-thickness: 4px;
-}
-
-.links {
+.linksContainer {
     display: flex;
     gap: 4rem;
 }
+
+/* .links removed in favor of linksContainer handling with flex gap */
 
 .column {
     display: flex;
@@ -52,24 +51,20 @@
 }
 
 .column h4 {
-    color: var(--foreground);
+    color: #1a1a1a;
+    font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .column a {
+    color: #666;
+    font-size: 0.875rem;
     transition: color 0.2s;
 }
 
 .column a:hover {
     color: var(--primary);
-}
-
-.bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 2rem 0;
-    text-align: center;
-    font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {
