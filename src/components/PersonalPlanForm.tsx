@@ -6,9 +6,10 @@ import styles from '../app/myfit/MyFit.module.css';
 
 interface PersonalPlanFormProps {
     onAnalysisComplete: (data: any) => void;
+    onLoadingChange?: (loading: boolean) => void;
 }
 
-export default function PersonalPlanForm({ onAnalysisComplete }: PersonalPlanFormProps) {
+export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }: PersonalPlanFormProps) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState({
@@ -24,6 +25,7 @@ export default function PersonalPlanForm({ onAnalysisComplete }: PersonalPlanFor
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        if (onLoadingChange) onLoadingChange(true);
         setError(null);
         try {
             const response = await fetch('/api/analyze', {
@@ -41,6 +43,7 @@ export default function PersonalPlanForm({ onAnalysisComplete }: PersonalPlanFor
             setError(error.message || 'Failed to generate plan. Please try again.');
         } finally {
             setLoading(false);
+            if (onLoadingChange) onLoadingChange(false);
         }
     };
 
