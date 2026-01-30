@@ -1,0 +1,912 @@
+/* src/app/myfit/MyFit.module.css */
+
+.container {
+    min-height: 100vh;
+    background-color: #F9FAFC;
+    /* Very light cool gray */
+    font-family: var(--font-geist-sans), sans-serif;
+    color: #1C1C1E;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #1C1C1E;
+}
+
+.logoIcon {
+    width: 24px;
+    height: 24px;
+    background-color: #D9F257;
+    /* Old lime, adjusted to mint in design? looks slightly mintier but logo is green */
+    border-radius: 50%;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.8rem;
+    color: #8E8E93;
+}
+
+.userProfileName {
+    font-weight: 600;
+    color: #1C1C1E;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #E1E1E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: white;
+}
+
+/* Main Content Padding */
+.main {
+    padding: 2rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 1.5rem;
+    }
+}
+
+/* Welcome Section */
+.welcomeSection {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.welcomeTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.subTitle {
+    color: #8E8E93;
+    font-size: 1rem;
+}
+
+.statusCards {
+    display: flex;
+    gap: 1rem;
+}
+
+.statusCard {
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    min-width: 140px;
+}
+
+.statusIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6F0FF;
+    /* Soft Blue */
+    color: #007AFF;
+}
+
+.statusIcon.purple {
+    background-color: #F2E6FF;
+    color: #AF52DE;
+}
+
+.statusInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.statusLabel {
+    font-size: 0.7rem;
+    color: #8E8E93;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.statusValue {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1C1C1E;
+}
+
+.statusTag {
+    font-size: 0.75rem;
+    color: #34C759;
+    /* Green */
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+
+/* Grid Layout */
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    /* Left col smaller than right */
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .dashboardGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Nutrition Chart */
+.nutritionBody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Ring left, Stats right */
+    padding: 0 1rem;
+}
+
+@media (max-width: 500px) {
+    .nutritionBody {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.ringWrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Minimal CSS Conic Gradient Ring */
+.ring {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#66E0A3 0% 25%,
+            /* Fat */
+            #FF9500 25% 70%,
+            /* Carbs */
+            #549EF2 70% 100%
+            /* Protein */
+        );
+    position: relative;
+    /* To make it a ring */
+    mask: radial-gradient(transparent 65%, black 66%);
+    -webkit-mask: radial-gradient(transparent 65%, black 66%);
+}
+
+.ringContent {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caloriesValue {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.caloriesLabel {
+    font-size: 0.75rem;
+    color: #8E8E93;
+    margin-top: 0.25rem;
+}
+
+.macroList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 160px;
+}
+
+.macroItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.macroHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1C1C1E;
+}
+
+.macroStats {
+    font-size: 0.85rem;
+    color: #C7C7CC;
+}
+
+.progressBar {
+    height: 6px;
+    background-color: #F2F2F7;
+    border-radius: 3px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    border-radius: 3px;
+}
+
+.nutritionFooter {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.footerLabel {
+    color: #8E8E93;
+    margin-bottom: 0.25rem;
+}
+
+.footerValue {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Breakfast List */
+.listHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.viewAll {
+    color: #34C759;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.foodRow {
+    display: flex;
+    gap: 1rem;
+}
+
+.foodCard {
+    flex: 1;
+    background-color: white;
+    border-radius: 16px;
+    padding: 0.75rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border: 1px solid #F2F2F7;
+}
+
+.foodImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #eee;
+    object-fit: cover;
+}
+
+.foodInfo {
+    flex: 1;
+}
+
+.foodName {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.foodMeta {
+    font-size: 0.75rem;
+    color: #8E8E93;
+}
+
+.addButton {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #C7C7CC;
+    cursor: pointer;
+}
+
+/* Guide Card (Green) */
+.guideCard {
+    background-color: #E8F7ED;
+    /* Light Mint */
+    padding: 1.5rem;
+    border-radius: 24px;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.guideIcon {
+    width: 32px;
+    height: 32px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #34C759;
+    flex-shrink: 0;
+}
+
+.guideContent h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.guideContent p {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Workout Hero Card */
+.workoutHero {
+    position: relative;
+    height: 300px;
+    /* Reduced for smaller screens, usually taller */
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #333;
+    /* Fallback */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;
+    background-position: center;
+}
+
+.tag {
+    background-color: #66E0A3;
+    color: #1C1C1E;
+    padding: 0.35rem 0.75rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.7rem;
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.workoutHeroTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.workoutHeroSub {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Workout Controls */
+.workoutControls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 1rem 0;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.timerRing {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #66E0A3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #66E0A3;
+}
+
+.timeDisplay {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.timeTotal {
+    color: #C7C7CC;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.playControls {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.controlBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #E5E5EA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    cursor: pointer;
+    color: #1C1C1E;
+}
+
+.controlBtn.primary {
+    background-color: #66E0A3;
+    border: none;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 12px rgba(102, 224, 163, 0.4);
+}
+
+/* Exercise List */
+.exerciseList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.exerciseItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #F9F9F9;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.exerciseItem.active {
+    background-color: #E8F7ED;
+    color: #1C1C1E;
+}
+
+.exerciseDuration {
+    color: #8E8E93;
+}
+
+.exerciseItem.active .exerciseDuration {
+    color: #34C759;
+}
+
+/* Technical Guide Sidebox */
+.techGuide {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.techTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.infoIcon {
+    color: #007AFF;
+}
+
+.techText {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.safetyLink {
+    color: #34C759;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Chat Bubble */
+.chatBubble {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background-color: #1C1C1E;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modalContent {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #8E8E93;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formRow {
+    display: flex;
+    gap: 1rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.formGroup label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1C1C1E;
+}
+
+.inputField {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #E5E5EA;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #F9FAFC;
+    outline: none;
+}
+
+.inputField:focus {
+    border-color: #34C759;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.1);
+}
+
+.metricGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tagsInput {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background-color: #F9FAFC;
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid #E5E5EA;
+}
+
+.tag {
+    background-color: #E8F7ED;
+    color: #34C759;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.addTagBtn {
+    background: none;
+    border: none;
+    color: #007AFF;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveButton {
+    background-color: #1C1C1E;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    transition: transform 0.1s;
+}
+
+.saveButton:active {
+    transform: scale(0.98);
+}
+
+/* New UI Elements for Dynamic Plan */
+.daySelector {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    scrollbar-width: none;
+}
+
+.daySelector::-webkit-scrollbar {
+    display: none;
+}
+
+.dayChip {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8E8E93;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid #E5E5EA;
+    transition: all 0.2s;
+}
+
+.dayChip.active {
+    background-color: #1C1C1E;
+    color: white;
+    border-color: #1C1C1E;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mealHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.swapButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #34C759;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.swapButton:hover {
+    transform: rotate(15deg);
+}
+
+.optionIndicator {
+    font-size: 0.65rem;
+    color: #C7C7CC;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.tipsList {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.tipsList li {
+    margin-bottom: 0.5rem;
+}
+
+/* Sub Header */
+.subHeader {
+    padding-top: 100px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 0.5rem 0;
+}
+
+.backButton:hover {
+    color: #000;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #888;
+}
+
+.breadcrumbs a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+    color: #000;
+}
+
+.separator {
+    color: #ccc;
+    font-size: 0.75rem;
+}
+
+.activeCrumb {
+    color: #000;
+    font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+    .subHeader {
+        padding-top: 100px;
+    }
+}

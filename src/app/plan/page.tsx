@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import styles from './Plan.module.css';
+import Link from 'next/link';
 
 export default function PlanPage() {
     return (
@@ -27,7 +28,7 @@ export default function PlanPage() {
                             sustainable results.
                         </p>
 
-                        <button className={styles.ctaButton}>Start Plan</button>
+                        <Link href="/myfit" className={styles.ctaButton}>Start Plan</Link>
                     </div>
                 </section>
 
@@ -177,7 +178,7 @@ export default function PlanPage() {
                 <section className={styles.ctaMainSection}>
                     <h2 className={styles.ctaTitle}>Ready to become your<br />brightest self?</h2>
                     <p className={styles.ctaDesc}>Join thousands of mothers who have successfully reclaimed their confidence and health. Your transformation starts with a single step.</p>
-                    <button className={styles.ctaButton}>Start Training Now</button>
+                    <Link href="/myfit" className={styles.ctaButton}>Start Training Now</Link>
                     <div className={styles.trustBadge}>
                         <span>🛡️ 100% Safe & Expert-Approved</span>
                     </div>
