@@ -50,6 +50,7 @@ export default function MyFit() {
     const healthStatus = planData ? 'Customized' : 'Postpartum';
 
     const calories = planData?.user_analysis?.daily_calorie_target || 1450;
+    const tdee = planData?.user_analysis?.tdee || 1800;
     const consumed = 0; // Reset to 0 for fresh daily view
     const remaining = Math.max(0, calories - consumed);
 
@@ -230,14 +231,17 @@ export default function MyFit() {
                                         <span className={styles.footerLabel}>Target</span>
                                         <span className={styles.footerValue}>{calories}</span>
                                     </div>
+                                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                        <span className={styles.footerLabel}>Maintenance</span>
+                                        <span className={styles.footerValue} style={{ color: '#8E8E93' }}>{tdee}</span>
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Breakfast Options */}
                             <div>
                                 <div className={styles.listHeader}>
-                                    <h3 className={styles.cardTitle}>Today's Meal Plan</h3>
-                                    <span className={styles.viewAll}>View Full Schedule</span>
+                                    <h3 className={styles.cardTitle}>Today&apos;s Meal Plan</h3>
                                 </div>
                                 <div className={styles.foodRow} style={{ flexDirection: 'column', gap: '0.75rem' }}>
                                     {planData?.nutrition_plan?.meal_schedule ? (
@@ -390,7 +394,7 @@ export default function MyFit() {
                             </div>
 
                             {/* Technical Guide */}
-                            <div className={styles.techGuide}>
+                            <div className={styles.techGuide} id="safety-protocol">
                                 <div className={styles.techTitle}>
                                     <div style={{ backgroundColor: '#E6F0FF', padding: 4, borderRadius: 4 }}>
                                         <Info size={16} className={styles.infoIcon} />
@@ -400,20 +404,25 @@ export default function MyFit() {
                                 <p className={styles.techText}>
                                     Maintain a &quot;gentle-but-engaged&quot; core. Avoid high-impact jumps if you feel any pressure. Keep your movements fluid and listen to your body&apos;s feedback.
                                 </p>
-                                <div className={styles.safetyLink}>
+                                <div
+                                    className={styles.safetyLink}
+                                    onClick={() => document.getElementById('safety-protocol')?.scrollIntoView({ behavior: 'smooth' })}
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     VIEW SAFETY PROTOCOL <ArrowRight size={14} />
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                )}
-            </main>
+                )
+                }
+            </main >
 
             {/* Chat Bubble */}
-            <div className={styles.chatBubble}>
+            < div className={styles.chatBubble} >
                 <BotMessageSquare size={24} />
-            </div>
+            </div >
         </div >
     );
 }
