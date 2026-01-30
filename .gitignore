@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# API Debug & Responses
+api_debug.log
+api_response.json
+api_response_schema_test.json
