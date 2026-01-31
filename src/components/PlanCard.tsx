@@ -1,5 +1,5 @@
 import React from 'react';
-import { Share, MoreHorizontal, Star, Flame, Clock } from 'lucide-react';
+import { Share, MoreHorizontal, Star, Flame } from 'lucide-react';
 import styles from '../app/plan/DailyPlan.module.css';
 
 interface PlanCardProps {

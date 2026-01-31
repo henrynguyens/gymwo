@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import { X, ChevronRight, Loader2 } from 'lucide-react';
 import styles from '../app/myfit/MyFit.module.css';
+import { PlanData } from '@/types';
 
 interface PersonalPlanFormProps {
-    onAnalysisComplete: (data: any) => void;
+    onAnalysisComplete: (data: PlanData) => void;
     onLoadingChange?: (loading: boolean) => void;
 }
 
@@ -38,9 +39,10 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
             const data = await response.json();
             if (data.error) throw new Error(data.error);
             onAnalysisComplete(data);
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error('Analysis failed:', error);
-            setError(error.message || 'Failed to generate plan. Please try again.');
+            const errorMessage = error instanceof Error ? error.message : 'Failed to generate plan. Please try again.';
+            setError(errorMessage);
         } finally {
             setLoading(false);
             if (onLoadingChange) onLoadingChange(false);

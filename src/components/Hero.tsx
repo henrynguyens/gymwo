@@ -38,7 +38,7 @@ const Hero = () => {
                         <div className={styles.screen}>
                             {/* Placeholder for App Interface */}
                             <div className={styles.goalHeader}>
-                                <span className={styles.goalHeaderText}>Today's Goal</span>
+                                <span className={styles.goalHeaderText}>Today&apos;s Goal</span>
                                 <span className={styles.menuIcon}>≡</span>
                             </div>
 

@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { age, gender, height, currentWeight, targetWeight, preferences, focusArea } = body;
+    const { age, height, currentWeight, targetWeight, preferences, focusArea } = body;
 
     console.log('Requesting OpenRouter with key present:', !!apiKey);
 
@@ -144,17 +144,18 @@ JSON Schema (DO NOT CHANGE):
     let parsedData;
     try {
       parsedData = JSON.parse(finalJsonString);
-    } catch (e) {
+    } catch {
       console.error('Failed to parse JSON:', finalJsonString);
       throw new Error('Invalid JSON received from AI Provider');
     }
 
     return NextResponse.json(parsedData);
 
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('SERVER ERROR generating plan:', error);
     return NextResponse.json(
-      { error: 'Failed to generate plan: ' + error.message, details: JSON.stringify(error) },
+      { error: 'Failed to generate plan: ' + errorMessage, details: JSON.stringify(error) },
       { status: 500 }
     );
   }

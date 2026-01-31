@@ -37,14 +37,14 @@ export default function PlanPage() {
                     <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
                     <div className={styles.quoteContent}>
                         <p className={styles.quoteText}>
-                            “Hi mama, I'm Adele...<br />
+                            &quot;Hi mama, I&apos;m Adele...<br />
                             Join (34), 4 months<br />
                             postpartum. I<br />
                             understand exactly<br />
-                            what you're going<br />
-                            through. Let's start<br />
+                            what you&apos;re going<br />
+                            through. Let&apos;s start<br />
                             this journey<br />
-                            together.”
+                            together.&quot;
                         </p>
                         <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
                     </div>
@@ -115,7 +115,7 @@ export default function PlanPage() {
                         <div className={styles.tipIcon}>
                             <span style={{ color: '#00FF7F' }}>⏰</span>
                         </div>
-                        <h3 className={styles.tipTitle}>The '3 BEFORE' Rule</h3>
+                        <h3 className={styles.tipTitle}>The &apos;3 BEFORE&apos; Rule</h3>
                         <p className={styles.tipDesc}>Essential intake: Before exercise, before sleep, and before breastfeeding for optimal energy.</p>
                     </div>
 
@@ -183,9 +183,9 @@ export default function PlanPage() {
                         <span>🛡️ 100% Safe & Expert-Approved</span>
                     </div>
                 </section>
-            </div>
+            </div >
 
             <Footer />
-        </main>
+        </main >
     );
 }

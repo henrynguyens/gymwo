@@ -5,7 +5,6 @@ import Link from 'next/link';
 import {
     Leaf,
     MoreHorizontal,
-    Play,
     RotateCcw,
     RotateCw,
     Pause,
@@ -15,22 +14,22 @@ import {
     Flame,
     ArrowRight,
     ChevronLeft,
-    PlusCircle,
     RefreshCw
 } from 'lucide-react';
 import styles from './MyFit.module.css';
 import PersonalPlanForm from '../../components/PersonalPlanForm';
 import Navbar from '@/components/Navbar';
 import { MOCK_PLAN_DATA } from '../../data/mockPlan';
+import { PlanData, Exercise } from '@/types';
 
 export default function MyFit() {
-    const [planData, setPlanData] = useState<any>(MOCK_PLAN_DATA);
+    const [planData, setPlanData] = useState<PlanData>((MOCK_PLAN_DATA as unknown) as PlanData);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
 
     const [selectedDay, setSelectedDay] = useState(0);
     const [mealIndices, setMealIndices] = useState<Record<string, number>>({});
 
-    const handleAnalysisComplete = (data: any) => {
+    const handleAnalysisComplete = (data: PlanData) => {
         setPlanData(data);
         setSelectedDay(0);
         setMealIndices({});
@@ -246,7 +245,7 @@ export default function MyFit() {
                                 <div className={styles.foodRow} style={{ flexDirection: 'column', gap: '0.75rem' }}>
                                     {planData?.nutrition_plan?.meal_schedule ? (
                                         ['breakfast', 'snack_1', 'lunch', 'snack_2', 'dinner'].map((mealType) => {
-                                            const meal = planData.nutrition_plan.meal_schedule[mealType];
+                                            const meal = planData.nutrition_plan?.meal_schedule?.[mealType];
                                             if (!meal || !meal.options?.length) return null;
 
                                             const currentIndex = mealIndices[mealType] || 0;
@@ -370,7 +369,7 @@ export default function MyFit() {
                                         </h4>
                                         <div className={styles.exerciseList}>
                                             {todayWorkout.exercises ? (
-                                                todayWorkout.exercises.map((ex: any, i: number) => (
+                                                todayWorkout.exercises.map((ex: Exercise, i: number) => (
                                                     <div key={i} className={`${styles.exerciseItem} ${i === 0 ? styles.active : ''}`}>
                                                         <div style={{ flex: 1 }}>
                                                             <span style={{ display: 'block', fontWeight: 500 }}>{ex.name}</span>
