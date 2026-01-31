@@ -32,7 +32,29 @@ export default function PlanPage() {
                     </div>
                 </section>
 
-                {/* Quote Section */}
+                {/* Quote Section 1 */}
+                <section className={styles.quoteSection}>
+                    <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
+                    <div className={styles.quoteContent}>
+                        <p className={styles.quoteText}>
+                            &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
+                        </p>
+                        <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
+                    </div>
+                </section>
+
+                {/* Quote Section 2 */}
+                <section className={styles.quoteSection}>
+                    <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
+                    <div className={styles.quoteContent}>
+                        <p className={styles.quoteText}>
+                            &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
+                        </p>
+                        <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
+                    </div>
+                </section>
+
+                {/* Quote Section 3 */}
                 <section className={styles.quoteSection}>
                     <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
                     <div className={styles.quoteContent}>
