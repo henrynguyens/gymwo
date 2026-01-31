@@ -1,12 +1,9 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import styles from './Plan.module.css';
 import Link from 'next/link';
 
 export default function PlanPage() {
     return (
         <main className={styles.planPage}>
-            <Navbar />
 
             <div className={styles.container}>
                 {/* Hero Section */}
@@ -32,38 +29,40 @@ export default function PlanPage() {
                     </div>
                 </section>
 
-                {/* Quote Section 1 */}
-                <section className={styles.quoteSection}>
-                    <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
-                    <div className={styles.quoteContent}>
-                        <p className={styles.quoteText}>
-                            &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
-                        </p>
-                        <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
-                    </div>
-                </section>
+                <div className={styles.testimonialsGrid}>
+                    {/* Quote Section 1 */}
+                    <section className={styles.quoteSection}>
+                        <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
+                        <div className={styles.quoteContent}>
+                            <p className={styles.quoteText}>
+                                &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
+                            </p>
+                            <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
+                        </div>
+                    </section>
 
-                {/* Quote Section 2 */}
-                <section className={styles.quoteSection}>
-                    <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
-                    <div className={styles.quoteContent}>
-                        <p className={styles.quoteText}>
-                            &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
-                        </p>
-                        <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
-                    </div>
-                </section>
+                    {/* Quote Section 2 */}
+                    <section className={styles.quoteSection}>
+                        <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
+                        <div className={styles.quoteContent}>
+                            <p className={styles.quoteText}>
+                                &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
+                            </p>
+                            <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
+                        </div>
+                    </section>
 
-                {/* Quote Section 3 */}
-                <section className={styles.quoteSection}>
-                    <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
-                    <div className={styles.quoteContent}>
-                        <p className={styles.quoteText}>
-                            &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
-                        </p>
-                        <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
-                    </div>
-                </section>
+                    {/* Quote Section 3 */}
+                    <section className={styles.quoteSection}>
+                        <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
+                        <div className={styles.quoteContent}>
+                            <p className={styles.quoteText}>
+                                &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
+                            </p>
+                            <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
+                        </div>
+                    </section>
+                </div>
 
                 {/* Roadmap Section */}
                 <section className={styles.roadmapSection}>
@@ -198,9 +197,9 @@ export default function PlanPage() {
                         <span>🛡️ 100% Safe & Expert-Approved</span>
                     </div>
                 </section>
-            </div >
 
-            <Footer />
+
+            </div >
         </main >
     );
 }

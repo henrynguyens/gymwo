@@ -29,11 +29,10 @@ const Navbar = () => {
 
                 {/* Desktop Links */}
                 <div className={styles.links}>
-                    <Link href="#features" className={styles.link}>Features</Link>
-                    <Link href="#classes" className={styles.link}>Classes</Link>
+                    <Link href="/#features" className={styles.link}>Features</Link>
+                    <Link href="/#classes" className={styles.link}>Classes</Link>
                     <Link href="/plan" className={styles.link}>Plans</Link>
-                    <Link href="#pricing" className={styles.link}>Pricing</Link>
-                    <Link href="#about" className={styles.link}>About</Link>
+                    <Link href="/about" className={styles.link}>About</Link>
                 </div>
 
                 <div className={styles.actions}>
@@ -49,11 +48,10 @@ const Navbar = () => {
             {/* Mobile Menu Drawer */}
             {isMobileMenuOpen && (
                 <div className={styles.mobileMenu}>
-                    <Link href="#features" className={styles.mobileLink} onClick={toggleMenu}>Features</Link>
-                    <Link href="#classes" className={styles.mobileLink} onClick={toggleMenu}>Classes</Link>
+                    <Link href="/#features" className={styles.mobileLink} onClick={toggleMenu}>Features</Link>
+                    <Link href="/#classes" className={styles.mobileLink} onClick={toggleMenu}>Classes</Link>
                     <Link href="/plan" className={styles.mobileLink} onClick={toggleMenu}>Plans</Link>
-                    <Link href="#pricing" className={styles.mobileLink} onClick={toggleMenu}>Pricing</Link>
-                    <Link href="#about" className={styles.mobileLink} onClick={toggleMenu}>About</Link>
+                    <Link href="/about" className={styles.mobileLink} onClick={toggleMenu}>About</Link>
                 </div>
             )}
         </nav>

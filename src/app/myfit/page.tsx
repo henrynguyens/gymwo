@@ -18,7 +18,6 @@ import {
 } from 'lucide-react';
 import styles from './MyFit.module.css';
 import PersonalPlanForm from '../../components/PersonalPlanForm';
-import Navbar from '@/components/Navbar';
 import { MOCK_PLAN_DATA } from '../../data/mockPlan';
 import { PlanData, Exercise } from '@/types';
 
@@ -87,9 +86,6 @@ export default function MyFit() {
 
     return (
         <div className={styles.container}>
-            {/* Header */}
-            <Navbar />
-
             {/* Sub Header */}
             <div className={styles.subHeader}>
                 <Link href="/plan" className={styles.backButton}>

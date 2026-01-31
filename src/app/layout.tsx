@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   },
 };
 
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${urbanist.variable}`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
