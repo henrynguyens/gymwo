@@ -37,14 +37,7 @@ export default function PlanPage() {
                     <div className={styles.avatar} style={{ backgroundImage: 'url(/images/hero-2.jpg)' }}></div>
                     <div className={styles.quoteContent}>
                         <p className={styles.quoteText}>
-                            &quot;Hi mama, I&apos;m Adele...<br />
-                            Join (34), 4 months<br />
-                            postpartum. I<br />
-                            understand exactly<br />
-                            what you&apos;re going<br />
-                            through. Let&apos;s start<br />
-                            this journey<br />
-                            together.&quot;
+                            &quot;Hi mama, I&apos;m Adele... Join (34), 4 months postpartum. I understand exactly what you&apos;re going through. Let&apos;s start this journey together.&quot;
                         </p>
                         <span className={styles.quoteAuthor}>Sarah J.<br />Founder & Mom</span>
                     </div>
