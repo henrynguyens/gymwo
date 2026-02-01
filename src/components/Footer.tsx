@@ -1,16 +1,21 @@
+'use client';
+
 import Link from 'next/link';
 import styles from './Footer.module.css';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Footer = () => {
+    const { t } = useLanguage();
+
     return (
         <footer className={styles.footer}>
             <div className={`container ${styles.container}`}>
                 <div className={styles.brandColumn}>
                     <h2 className={styles.logo}>GYMWO</h2>
                     <p className={styles.description}>
-                        Pioneering the next generation of female-first fitness through artificial intelligence and physiological science.
+                        {t.footer.description}
                     </p>
-                    <p className={styles.copyright}>&copy; 2026 GYMWO AI FITNESS. All Rights Reserved.</p>
+                    <p className={styles.copyright}>{t.footer.rights}</p>
                 </div>
 
                 <div className={styles.linksContainer}>

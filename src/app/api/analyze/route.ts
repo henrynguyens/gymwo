@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { age, gender, height, currentWeight, targetWeight, preferences, focusArea } = body;
+    const { age, gender, height, currentWeight, targetWeight, preferences, focusArea, language } = body;
 
     console.log('Requesting OpenRouter with key present:', !!apiKey);
 
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     const prompt = `
 System Role: Certified Personal Trainer & Clinical Sports Nutritionist.
 
-Task:
+task:
 Generate a 6-week weight loss and fitness plan for a WebApp.
 
 User Profile:
@@ -48,7 +48,7 @@ Rules (STRICT):
    ${gender.includes('Postpartum') ? '- Core exercises must be postpartum-safe (avoid Diastasis Recti strain)' : ''}
 4. Language:
    - JSON keys in English
-   - JSON values in Vietnamese
+   - JSON values in ${language === 'en' ? 'English' : 'Vietnamese'}
 
 JSON Schema (DO NOT CHANGE):
 {

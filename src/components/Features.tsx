@@ -1,40 +1,26 @@
-import { Dumbbell, Users, Heart, Clock, CheckCircle } from 'lucide-react';
-import styles from './Features.module.css';
+'use client';
 
-const features = [
-    {
-        title: "State of the Art",
-        description: "Experience the latest in fitness technology with our premium biomechanically engineering equipment.",
-        icon: Dumbbell
-    },
-    {
-        title: "Expert Coaching",
-        description: "Our certified personal trainers create custom plans tailored to your specific body type and goals.",
-        icon: Users
-    },
-    {
-        title: "Recovery Zone",
-        description: "Post-workout recovery essentials including cryotherapy, sauna, and massage therapy services.",
-        icon: Heart
-    },
-    {
-        title: "24/7 Access",
-        description: "Train on your schedule. Our facilities are open 24 hours a day, 7 days a week, securely.",
-        icon: Clock
-    }
-];
+import { Dumbbell, Users, Heart, Clock } from 'lucide-react';
+import styles from './Features.module.css';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Features = () => {
+    const { t } = useLanguage();
+
+    // Map icons to the translated items based on index
+    // Note: Dictionary items must match this order: Dumbbell, Users, Heart, Clock
+    const icons = [Dumbbell, Users, Heart, Clock];
+
     return (
         <section id="features" className={styles.features}>
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className={styles.title}>WHY CHOOSE <span style={{ color: 'var(--primary)' }}>GYMWO</span></h2>
-                    <p className={styles.subtitle}>ELEVATE YOUR TRAINING TO THE NEXT LEVEL</p>
+                    <h2 className={styles.title}>{t.features.title} <span style={{ color: 'var(--primary)' }}>{t.features.brandName}</span></h2>
+                    <p className={styles.subtitle}>{t.features.subtitle}</p>
                 </div>
                 <div className={styles.grid}>
-                    {features.map((feature, index) => {
-                        const Icon = feature.icon;
+                    {t.features.items.map((feature, index) => {
+                        const Icon = icons[index];
                         return (
                             <div key={index} className={styles.card}>
                                 <div className={styles.iconBox}>

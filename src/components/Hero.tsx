@@ -2,19 +2,22 @@
 
 import { motion } from "framer-motion";
 import styles from './Hero.module.css';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
+    const { t } = useLanguage();
+
     return (
         <section className={styles.heroSection}>
             <div className={styles.container}>
                 {/* Header Content */}
                 <div className={styles.headerContent}>
                     <span className={styles.eyebrow}>The Fitness</span>
-                    <h1 className={styles.title}>Journey Starts Here</h1>
+                    <h1 className={styles.title}>{t.hero.title}</h1>
                     <p className={styles.subtitle}>
-                        Personalized workout plans and nutrition guides tailored to your specific body type and goals.
+                        {t.hero.subtitle}
                     </p>
-                    <button className={styles.ctaButton}>Start Your Journey Today</button>
+                    <button className={styles.ctaButton}>{t.hero.cta}</button>
                 </div>
 
                 {/* Central Visual (Phone Mockup) */}

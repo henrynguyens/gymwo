@@ -5,12 +5,15 @@ import { X, ChevronRight, Loader2 } from 'lucide-react';
 import styles from '../app/myfit/MyFit.module.css';
 import { PlanData } from '@/types';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 interface PersonalPlanFormProps {
     onAnalysisComplete: (data: PlanData) => void;
     onLoadingChange?: (loading: boolean) => void;
 }
 
 export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }: PersonalPlanFormProps) {
+    const { t, language } = useLanguage();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState({
@@ -34,7 +37,7 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, language }), // Pass language to API
             });
             const data = await response.json();
             if (data.error) throw new Error(data.error);
@@ -52,7 +55,7 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
     return (
         <div className={styles.card} style={{ marginBottom: '2rem' }}>
             <div className={styles.cardHeader}>
-                <h3 className={styles.cardTitle}>Personalize Your Plan</h3>
+                <h3 className={styles.cardTitle}>{t.myfit.title}</h3>
             </div>
 
             <div className={styles.modalForm}>
@@ -76,7 +79,7 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
                     {/* Age & Gender */}
                     <div className={styles.formRow}>
                         <div className={styles.formGroup}>
-                            <label>Age</label>
+                            <label>{t.myfit.age}</label>
                             <input
                                 type="number"
                                 value={formData.age}
@@ -85,7 +88,7 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
                             />
                         </div>
                         <div className={styles.formGroup}>
-                            <label>Gender / Status</label>
+                            <label>{t.myfit.gender}</label>
                             <select
                                 value={formData.gender}
                                 onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
@@ -102,7 +105,7 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
                     {/* Metrics */}
                     <div className={styles.metricGrid}>
                         <div className={styles.formGroup}>
-                            <label>Height (cm)</label>
+                            <label>{t.myfit.height}</label>
                             <input
                                 type="number"
                                 value={formData.height}
@@ -111,7 +114,7 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
                             />
                         </div>
                         <div className={styles.formGroup}>
-                            <label>Current Weight (kg)</label>
+                            <label>{t.myfit.currentWeight}</label>
                             <input
                                 type="number"
                                 value={formData.currentWeight}
@@ -120,7 +123,7 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
                             />
                         </div>
                         <div className={styles.formGroup}>
-                            <label>Target Weight (kg)</label>
+                            <label>{t.myfit.targetWeight}</label>
                             <input
                                 type="number"
                                 value={formData.targetWeight}
@@ -132,7 +135,7 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
 
                     {/* Preferences */}
                     <div className={styles.formGroup}>
-                        <label>Preferences</label>
+                        <label>{t.myfit.preferences}</label>
                         <div className={styles.tagsInput}>
                             {formData.preferences.map((pref, i) => (
                                 <span key={i} className={styles.tag}>
@@ -144,15 +147,15 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
                                 </span>
                             ))}
                             <button type="button" className={styles.addTagBtn} onClick={() => {
-                                const newPref = prompt("Enter preference:");
+                                const newPref = prompt(t.myfit.placeholders.pref);
                                 if (newPref) setFormData({ ...formData, preferences: [...formData.preferences, newPref] });
-                            }}>+ Add</button>
+                            }}>{t.myfit.addPref}</button>
                         </div>
                     </div>
 
                     {/* Focus Area */}
                     <div className={styles.formGroup}>
-                        <label>Focus Area</label>
+                        <label>{t.myfit.focusArea}</label>
                         <input
                             type="text"
                             value={formData.focusArea}
@@ -169,9 +172,9 @@ export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }
                             disabled={loading}
                         >
                             {loading ? (
-                                <>Analyzing <Loader2 className="animate-spin" size={18} /></>
+                                <>{t.myfit.analyzing} <Loader2 className="animate-spin" size={18} /></>
                             ) : (
-                                <>Start Analysis <ChevronRight size={18} /></>
+                                <>{t.myfit.startAnalysis} <ChevronRight size={18} /></>
                             )}
                         </button>
                     </div>
