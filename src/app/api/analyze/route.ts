@@ -11,20 +11,20 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { age, height, currentWeight, targetWeight, preferences, focusArea } = body;
+    const { age, gender, height, currentWeight, targetWeight, preferences, focusArea } = body;
 
     console.log('Requesting OpenRouter with key present:', !!apiKey);
 
     // 1. Construct the prompt
     const prompt = `
-System Role: Certified Personal Trainer & Clinical Sports Nutritionist (Postpartum).
+System Role: Certified Personal Trainer & Clinical Sports Nutritionist.
 
 Task:
-Generate a 6-week postpartum weight loss and core tightening plan for a WebApp.
+Generate a 6-week weight loss and fitness plan for a WebApp.
 
 User Profile:
 - Age: ${age}
-- Gender: Female (Postpartum)
+- Gender: ${gender}
 - Height: ${height} cm
 - Current Weight: ${currentWeight} kg
 - Target Weight: ${targetWeight} kg
@@ -44,8 +44,8 @@ Rules (STRICT):
    - Calculate total_daily_kcal_consumed as the SUM of all meal_kcal
    - total_daily_kcal_consumed MUST NOT exceed daily_calorie_target
 3. Workout:
-   - Include: Zumba, Yoga, Strength/Core
-   - Core exercises must be postpartum-safe (avoid Diastasis Recti strain)
+   - Include: ${preferences ? preferences.join(', ') : 'Strength, Cardio, flexibility'}
+   ${gender.includes('Postpartum') ? '- Core exercises must be postpartum-safe (avoid Diastasis Recti strain)' : ''}
 4. Language:
    - JSON keys in English
    - JSON values in Vietnamese
