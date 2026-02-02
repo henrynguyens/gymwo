@@ -1,20 +1,20 @@
-"use client";
+'use client';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './Analysis.module.css';
 
-const points = [
-    { title: "Smart Scan", desc: "Digital assessment of your form and body metrics." },
-    { title: "Holistic Health", desc: "Integrating sleep, nutrition, and recovery data." },
-    { title: "Dynamic Adapt", desc: "Workouts change as you improve." }
-];
+// Points are now in the dictionary
+
 
 const Analysis = () => {
+    const { t } = useLanguage();
+
     return (
         <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <h2 className={styles.title}>AI Analysis &<br />Personal Roadmap</h2>
+                    <h2 className={styles.title}>{t.analysis.titlePart1}<br />{t.analysis.titlePart2}</h2>
                     <div className={styles.points}>
-                        {points.map((p, i) => (
+                        {t.analysis.points.map((p, i) => (
                             <div key={i} className={styles.point}>
                                 <div className={styles.pointIcon}></div>
                                 <div>
@@ -34,7 +34,7 @@ const Analysis = () => {
                         {/* Overlay UI Mockup */}
                         <div className={styles.glassOverlay}>
                             <div className={styles.scanLine}></div>
-                            <span className={styles.scanLabel}>Analyzing Form...</span>
+                            <span className={styles.scanLabel}>{t.analysis.analyzing}</span>
                         </div>
                     </div>
                 </div>

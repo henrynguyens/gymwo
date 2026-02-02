@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import { Share, MoreHorizontal, Star, Flame } from 'lucide-react';
 import styles from '../app/plan/DailyPlan.module.css';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface PlanCardProps {
     coachName: string;
@@ -25,6 +27,8 @@ export default function PlanCard({
     reviews,
     calories,
 }: PlanCardProps) {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.card}>
             <div className={styles.cardHeader}>
@@ -35,7 +39,7 @@ export default function PlanCard({
                         {coachImage && <img src={coachImage} alt={coachName} className={styles.coachImage} />}
                     </div>
                     <div className={styles.coachName}>
-                        Coach
+                        {t.planCard.coach}
                         <span>{coachName}</span>
                     </div>
                 </div>
@@ -52,7 +56,7 @@ export default function PlanCard({
             <div>
                 <div className={styles.titleRow}>
                     <div>
-                        <div style={{ fontSize: '0.8rem', color: '#8E8E93' }}>{intensity} Intensity</div>
+                        <div style={{ fontSize: '0.8rem', color: '#8E8E93' }}>{intensity} {t.planCard.intensity}</div>
                         <h3 className={styles.activityTitle}>{title}</h3>
                     </div>
                     <span className={styles.durationBadge}>{duration}</span>
@@ -64,16 +68,16 @@ export default function PlanCard({
                 <div className={styles.statBox}>
                     <div className={styles.statLabel}>
                         <Star size={14} fill="#1C1C1E" />
-                        Rating
+                        {t.planCard.rating}
                     </div>
                     <div className={styles.statValue}>
-                        {rating} <span style={{ fontSize: '0.8rem', color: '#8E8E93', fontWeight: 400 }}>{reviews.toLocaleString()} reviews</span>
+                        {rating} <span style={{ fontSize: '0.8rem', color: '#8E8E93', fontWeight: 400 }}>{reviews.toLocaleString()} {t.planCard.reviews}</span>
                     </div>
                 </div>
                 <div className={styles.statBox}>
                     <div className={styles.statLabel}>
                         <Flame size={14} />
-                        Calories
+                        {t.planCard.calories}
                     </div>
                     <div className={styles.statValue}>
                         {calories} <span style={{ fontSize: '0.9rem', fontWeight: 400 }}>kcal</span>

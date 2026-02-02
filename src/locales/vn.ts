@@ -85,5 +85,51 @@ export const vn = {
     footer: {
         description: "Tiên phong thế hệ thể dục nữ giới tiếp theo thông qua trí tuệ nhân tạo và khoa học sinh lý.",
         rights: "© 2026 GYMWO AI FITNESS. Mọi quyền được bảo lưu."
+    },
+    benefits: {
+        eyebrow: "Được thiết kế cho",
+        title: "Hành trình của bạn",
+        subtitle: "Mọi thứ bạn cần để thành công, tất cả ở một nơi.",
+        items: [
+            { title: "Quy trình đề xuất", desc: "Hệ thống tự động hóa giúp sắp xếp quy trình tiếp nhận của bạn một cách chính xác." },
+            { title: "Kế hoạch cá nhân", desc: "Nhận các thói quen tập luyện chuyên biệt phù hợp với lối sống của bạn." },
+            { title: "Theo dõi hàng năm", desc: "Trực quan hóa sự tiến bộ của bạn theo thời gian với các chỉ số nâng cao." }
+        ]
+    },
+    analysis: {
+        titlePart1: "Phân tích AI &",
+        titlePart2: "Lộ trình cá nhân",
+        points: [
+            { title: "Quét thông minh", desc: "Đánh giá kỹ thuật số về tư thế và chỉ số cơ thể của bạn." },
+            { title: "Sức khỏe toàn diện", desc: "Tích hợp dữ liệu giấc ngủ, dinh dưỡng và phục hồi." },
+            { title: "Thích ứng năng động", desc: "Bài tập thay đổi khi thể lực của bạn cải thiện." }
+        ],
+        analyzing: "Đang phân tích..."
+    },
+    goals: {
+        title: "Mục tiêu của bạn, rõ ràng."
+    },
+    nutrition: {
+        daily: "Dinh dưỡng hàng ngày",
+        kcal: "kcal",
+        protein: "H.cơ",
+        titlePart1: "Bảng điều khiển",
+        titlePart2: "Dinh dưỡng thông minh",
+        text: "Theo dõi vĩ mô tự động. AI gợi ý kế hoạch bữa ăn dựa trên sở thích và mục tiêu của bạn.",
+        list: ["Kế hoạch cá nhân hóa", "Danh sách tự động tạo", "Quét & Theo dõi"]
+    },
+    expert: {
+        titlePart1: "Hỗ trợ chuyên gia",
+        titlePart2: "Cao cấp 24/7",
+        subtitle: "Đội ngũ chuyên gia dinh dưỡng và huấn luyện viên luôn sẵn sàng.",
+        aiAgent: { title: "Trợ lý AI", description: "Trả lời ngay lập tức các câu hỏi tập luyện, bất cứ lúc nào." },
+        humanSpec: { title: "Chuyên gia thực", description: "Đặt lịch gọi 1-1 với các chuyên gia để được tư vấn sâu." }
+    },
+    planCard: {
+        coach: "HLV",
+        intensity: "Cường độ",
+        rating: "Đánh giá",
+        calories: "Calo",
+        reviews: "đánh giá"
     }
 };

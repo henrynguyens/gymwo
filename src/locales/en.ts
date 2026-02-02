@@ -85,5 +85,51 @@ export const en = {
     footer: {
         description: "Pioneering the next generation of female-first fitness through artificial intelligence and physiological science.",
         rights: "© 2026 GYMWO AI FITNESS. All Rights Reserved."
+    },
+    benefits: {
+        eyebrow: "Designed for",
+        title: "Your Journey",
+        subtitle: "Everything you need to succeed, all in one place.",
+        items: [
+            { title: "Proposal Process", desc: "Our automated systems streamline your intake with precision." },
+            { title: "Personal Plan", desc: "Receive dedicated workout routines adapted to your lifestyle." },
+            { title: "Annual Tracking", desc: "Visualize your progress over time with advanced metrics." }
+        ]
+    },
+    analysis: {
+        titlePart1: "AI Analysis &",
+        titlePart2: "Personal Roadmap",
+        points: [
+            { title: "Smart Scan", desc: "Digital assessment of your form and body metrics." },
+            { title: "Holistic Health", desc: "Integrating sleep, nutrition, and recovery data." },
+            { title: "Dynamic Adapt", desc: "Workouts change as you improve." }
+        ],
+        analyzing: "Analyzing Form..."
+    },
+    goals: {
+        title: "Your Goals, Defined."
+    },
+    nutrition: {
+        daily: "Daily Nutrition",
+        kcal: "kcal",
+        protein: "Protein",
+        titlePart1: "Smart Nutrition",
+        titlePart2: "Dashboard",
+        text: "Track your macros automatically. Our AI suggests meal plans based on your preferences and goals.",
+        list: ["Personalized Plans", "Auto-generated Lists", "Scan & Track"]
+    },
+    expert: {
+        titlePart1: "24/7 Premium",
+        titlePart2: "Expert Support",
+        subtitle: "Our team of certified nutritionists and trainers are always available.",
+        aiAgent: { title: "AI Coach Agent", description: "Instant answers to your training questions, anytime." },
+        humanSpec: { title: "Human Specialists", description: "Schedule 1-on-1 calls with real experts for deep dives." }
+    },
+    planCard: {
+        coach: "Coach",
+        intensity: "Intensity",
+        rating: "Rating",
+        calories: "Calories",
+        reviews: "reviews"
     }
 };

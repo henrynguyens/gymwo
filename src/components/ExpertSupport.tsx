@@ -1,22 +1,26 @@
+'use client';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './ExpertSupport.module.css';
 
 const ExpertSupport = () => {
+    const { t } = useLanguage();
+
     return (
         <section className={styles.section}>
             <div className={`container ${styles.container}`}>
-                <h2 className={styles.title}>24/7 Premium<br />Expert Support</h2>
-                <p className={styles.subtitle}>Our team of certified nutritionists and trainers are always available.</p>
+                <h2 className={styles.title}>{t.expert.titlePart1}<br />{t.expert.titlePart2}</h2>
+                <p className={styles.subtitle}>{t.expert.subtitle}</p>
 
                 <div className={styles.grid}>
                     <div className={styles.card}>
                         <div className={styles.icon}>💬</div>
-                        <h3>AI Coach Agent</h3>
-                        <p>Instant answers to your training questions, anytime.</p>
+                        <h3>{t.expert.aiAgent.title}</h3>
+                        <p>{t.expert.aiAgent.description}</p>
                     </div>
                     <div className={styles.card}>
                         <div className={styles.icon}>👩‍⚕️</div>
-                        <h3>Human Specialists</h3>
-                        <p>Schedule 1-on-1 calls with real experts for deep dives.</p>
+                        <h3>{t.expert.humanSpec.title}</h3>
+                        <p>{t.expert.humanSpec.description}</p>
                     </div>
                 </div>
             </div>
