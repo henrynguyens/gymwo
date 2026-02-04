@@ -6,7 +6,7 @@
   --primary-foreground: #000000;
   --secondary: #1f1f1f;
   --accent: #2a2a2a;
-  --font-sans: var(--font-urbanist), sans-serif;
+  --font-sans: 'Google Sans Flex', 'Poppins', 'Urbanist', sans-serif;
 }
 
 * {

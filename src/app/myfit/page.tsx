@@ -1,7 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
 import {
     Leaf,
     MoreHorizontal,
@@ -22,8 +24,29 @@ import { MOCK_PLAN_DATA } from '../../data/mockPlan';
 import { PlanData, Exercise } from '@/types';
 
 export default function MyFit() {
+    const { user, isLoading } = useAuth();
+    const router = useRouter();
     const [planData, setPlanData] = useState<PlanData>((MOCK_PLAN_DATA as unknown) as PlanData);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
+
+    useEffect(() => {
+        if (!isLoading && !user) {
+            router.push('/login');
+        }
+    }, [user, isLoading, router]);
+
+    if (isLoading) {
+        return (
+            <div className={styles.container} style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: '#8E8E93' }}>
+                    <RefreshCw className="animate-spin" size={32} />
+                    <span>Loading your plan...</span>
+                </div>
+            </div>
+        );
+    }
+
+    if (!user) return null;
 
     const [selectedDay, setSelectedDay] = useState(0);
     const [mealIndices, setMealIndices] = useState<Record<string, number>>({});
