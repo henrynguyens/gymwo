@@ -52,9 +52,10 @@ export default function RegisterPage() {
             alert(`Welcome to GYMWO! Please check your email to confirm your account.`);
             router.push('/login');
 
-        } catch (err: any) {
+        } catch (err: unknown) {
             console.error('Registration failed:', err);
-            setError(err.message || 'Registration failed');
+            const errorMessage = err instanceof Error ? err.message : 'Registration failed';
+            setError(errorMessage);
         } finally {
             setIsLoading(false);
         }

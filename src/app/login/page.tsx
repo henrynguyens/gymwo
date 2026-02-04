@@ -38,8 +38,9 @@ export default function LoginPage() {
 
             router.push('/plan');
             router.refresh();
-        } catch (err: any) {
-            setError(err.message || 'Failed to sign in');
+        } catch (err: unknown) {
+            const errorMessage = err instanceof Error ? err.message : 'Failed to sign in';
+            setError(errorMessage);
         } finally {
             setIsLoading(false);
         }
@@ -89,7 +90,7 @@ export default function LoginPage() {
                     </button>
 
                     <p style={{ textAlign: 'center', fontSize: '0.875rem', color: '#666' }}>
-                        Don't have an account? <Link href="/register" style={{ color: 'var(--primary)', cursor: 'pointer' }}>Sign up</Link>
+                        Don&apos;t have an account? <Link href="/register" style={{ color: 'var(--primary)', cursor: 'pointer' }}>Sign up</Link>
                     </p>
                 </form>
             </div>

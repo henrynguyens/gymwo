@@ -28,6 +28,8 @@ export default function MyFit() {
     const router = useRouter();
     const [planData, setPlanData] = useState<PlanData>((MOCK_PLAN_DATA as unknown) as PlanData);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
+    const [selectedDay, setSelectedDay] = useState(0);
+    const [mealIndices, setMealIndices] = useState<Record<string, number>>({});
 
     useEffect(() => {
         if (!isLoading && !user) {
@@ -48,8 +50,7 @@ export default function MyFit() {
 
     if (!user) return null;
 
-    const [selectedDay, setSelectedDay] = useState(0);
-    const [mealIndices, setMealIndices] = useState<Record<string, number>>({});
+
 
     const handleAnalysisComplete = (data: PlanData) => {
         setPlanData(data);
