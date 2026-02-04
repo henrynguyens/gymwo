@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { AuthProvider } from "@/context/AuthContext";
 
 export default function RootLayout({
   children,
@@ -46,9 +47,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${urbanist.variable}`}>
         <LanguageProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <AuthProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </AuthProvider>
         </LanguageProvider>
       </body>
     </html>

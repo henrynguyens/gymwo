@@ -6,10 +6,12 @@ import Image from 'next/image';
 import { Menu, X, Globe } from 'lucide-react';
 import styles from './Navbar.module.css';
 import { useLanguage } from '@/context/LanguageContext';
+import { useAuth } from '@/context/AuthContext';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { t, language, setLanguage } = useLanguage();
+    const { user, signOut } = useAuth();
 
     const toggleMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -60,7 +62,25 @@ const Navbar = () => {
                         {language === 'en' ? 'VN' : 'EN'}
                     </button>
 
-                    <button className="btn btn-primary">{t.nav.joinNow}</button>
+                    {user ? (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>
+                                {user.email?.split('@')[0]}
+                            </span>
+                            <button
+                                onClick={signOut}
+                                className="btn btn-outline"
+                                style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    ) : (
+                        <>
+                            <Link href="/login" className={styles.link} style={{ marginRight: '1rem', fontWeight: 600 }}>Login</Link>
+                            <Link href="/register" className="btn btn-primary">{t.nav.joinNow}</Link>
+                        </>
+                    )}
 
                     {/* Mobile Toggle */}
                     <button className={styles.mobileToggle} onClick={toggleMenu} aria-label="Toggle menu">
@@ -84,6 +104,21 @@ const Navbar = () => {
                             Switch to {language === 'en' ? 'Vietnamese' : 'English'}
                         </button>
                     </div>
+                    {user ? (
+                        <div style={{ padding: '0 2rem 1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                            <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                                {user.email}
+                            </span>
+                            <button onClick={() => { signOut(); toggleMenu(); }} className="btn btn-primary" style={{ width: '100%' }}>
+                                Logout
+                            </button>
+                        </div>
+                    ) : (
+                        <div style={{ padding: '0 2rem 1rem' }}>
+                            <Link href="/login" onClick={toggleMenu} className="btn btn-secondary" style={{ width: '100%', marginBottom: '0.5rem', textAlign: 'center' }}>Login</Link>
+                            <Link href="/register" onClick={toggleMenu} className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>{t.nav.joinNow}</Link>
+                        </div>
+                    )}
                 </div>
             )}
         </nav>
