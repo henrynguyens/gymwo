@@ -440,152 +440,87 @@
     gap: 0.5rem;
 }
 
-/* Desktop Responsiveness */
-@media (min-width: 1024px) {
+/* Responsive Mobile Styles */
+@media (max-width: 768px) {
     .container {
-        max-width: 1200px;
+        padding: 0 1rem;
     }
 
-    /* Hero Split Layout */
     .hero {
-        display: flex;
-        align-items: center;
-        text-align: left;
-        gap: 6rem;
-        padding: 120px 0 80px;
+        padding: 60px 0 40px;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
     }
 
     .heroImageContainer {
-        order: 2;
-        flex: 1;
-        margin-bottom: 0;
-        justify-content: flex-end;
-    }
-
-    .heroImage {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
-        border: 8px solid #1a1a1a;
-        /* Added thick border */
-        border-radius: 20px;
+        order: 1;
+        margin-bottom: 1.5rem;
     }
 
     .heroContent {
-        flex: 0.8;
-        order: 1;
-        padding-right: 2rem;
+        order: 2;
+        padding-right: 0;
     }
 
-    /* Testimonials Grid */
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    /* Stack Testimonials */
     .testimonialsGrid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        padding: 60px 0;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 40px 0;
     }
 
     .quoteSection {
         flex-direction: column;
-        /* Stack avatar and text on desktop grid for better fit */
-        text-align: center;
-        /* Center align content in card */
         align-items: center;
-        justify-content: flex-start;
+        text-align: center;
+        padding: 1.5rem;
         background: #fdfdfd;
-        padding: 2rem;
         border-radius: 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
 
     .avatar {
-        width: 80px;
-        height: 80px;
         margin-bottom: 1rem;
     }
 
-    .quoteText {
-        font-size: 1rem;
-    }
-
-    /* Grids for Cards */
+    /* Stack Roadmap */
     .roadmapList {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: 1fr;
     }
 
     .roadmapCard {
-        /* Card styles inherited/reset */
-        height: 100%;
+        margin-bottom: 1rem;
     }
 
-    /* Tips Section Grid Layout */
+    /* Stack Tips */
     .tipsSection {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        text-align: left;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .tipsTitle {
-        grid-column: 1 / -1;
-        text-align: center;
-        font-size: 2.5rem;
+        font-size: 1.75rem;
     }
 
-    .tipsSubtitle {
-        grid-column: 1 / -1;
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-
-    .tipCard {
-        margin-bottom: 0;
-        height: 100%;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    /* The 3rd child in tipsSection is the Detox card, make it full width */
-    .tipsSection>div:nth-last-child(1) {
-        grid-column: 1 / -1;
-        display: flex;
-        /* Make it flex to align items better if needed, or keep block */
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        text-align: left;
-    }
-
-    /* Specific styles for the Wide Detox Card on Desktop */
-    .tipsSection>div:nth-last-child(1) .tipIcon {
-        margin-bottom: 0;
-        margin-right: 0;
-        min-width: 60px;
-        /* Prevent shrink */
-    }
-
-    .tipsSection>div:nth-last-child(1) .tipTitle {
-        margin-bottom: 0.5rem;
-    }
-
-    /* Gallery Section */
-    .gallerySection {
-        padding: 80px 0;
-    }
-
+    /* Stack Gallery */
     .galleryList {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    .galleryCard {
-        border-radius: 20px;
+    /* Adjust CTA Section */
+    .ctaMainSection {
+        margin: 40px -1rem -80px -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-radius: 40px 40px 0 0;
     }
 
-    .galleryImage {
-        height: 250px;
-        /* Taller on desktop */
+    .ctaTitle {
+        font-size: 1.75rem;
     }
 }
