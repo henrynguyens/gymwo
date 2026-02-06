@@ -16,7 +16,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-    const [language, setLanguage] = useState<Language>('vn'); // Default to VN
+    const [language, setLanguage] = useState<Language>('en'); // Default to EN
 
     const t = language === 'vn' ? vn : en;
 
