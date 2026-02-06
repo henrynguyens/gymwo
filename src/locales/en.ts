@@ -107,7 +107,8 @@ export const en = {
         analyzing: "Analyzing Form..."
     },
     goals: {
-        title: "Your Goals, Defined."
+        title: "Your Goals, Defined.",
+        items: ["Lose Weight", "Build Muscle", "Keep Fit"]
     },
     nutrition: {
         daily: "Daily Nutrition",

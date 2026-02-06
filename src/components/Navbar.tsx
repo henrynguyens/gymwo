@@ -64,13 +64,13 @@ const Navbar = () => {
 
                     {user ? (
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>
+                            <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#000' }}>
                                 {user.email?.split('@')[0]}
                             </span>
                             <button
                                 onClick={signOut}
                                 className="btn btn-outline"
-                                style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}
+                                style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', color: '#000', borderColor: '#000' }}
                             >
                                 Logout
                             </button>

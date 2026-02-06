@@ -44,7 +44,24 @@
     scale: 1.05;
 }
 
-/* Overlay removed to match user reference */
+.cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
 
 @media (max-width: 768px) {
     .grid {

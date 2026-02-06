@@ -107,7 +107,8 @@ export const vn = {
         analyzing: "Đang phân tích..."
     },
     goals: {
-        title: "Mục tiêu của bạn, rõ ràng."
+        title: "Mục tiêu của bạn, rõ ràng.",
+        items: ["Giảm cân", "Tăng cơ", "Duy trì vóc dáng"]
     },
     nutrition: {
         daily: "Dinh dưỡng hàng ngày",
