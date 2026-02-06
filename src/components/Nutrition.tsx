@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Nutrition.module.css';
 
@@ -26,7 +27,13 @@ const Nutrition = () => {
                             </div>
                         </div>
                         <div className={styles.dashImage}>
-                            <img src="/images/nutrition-1.jpg" alt="Food" />
+                            <Image
+                                src="/images/nutrition-1.jpg"
+                                alt="Food"
+                                width={500}
+                                height={300}
+                                style={{ width: '100%', height: 'auto', display: 'block' }}
+                            />
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from './Hero.module.css';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -46,7 +47,7 @@ const Hero = () => {
                             </div>
 
                             <div className={styles.goalCard}>
-                                <img src="/images/hero-1.jpg" alt="Goal" className={styles.goalImage} />
+                                <Image src="/images/hero-1.jpg" alt="Goal" className={styles.goalImage} width={300} height={200} style={{ width: '100%', height: 'auto' }} />
                                 <div className={styles.goalOverlay}>
                                     <span className={styles.levelTag}>Level 1</span>
                                     <h3 className={styles.goalTitle}>5-Day Strength Boost</h3>

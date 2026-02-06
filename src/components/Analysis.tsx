@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Analysis.module.css';
 
@@ -29,7 +30,14 @@ const Analysis = () => {
                 <div className={styles.visual}>
                     <div className={styles.imageCard}>
                         {/* Placeholder for person being analyzed */}
-                        <img src="/images/analysis-1.jpg" alt="Analysis" className={styles.image} />
+                        <Image
+                            src="/images/analysis-1.jpg"
+                            alt="Analysis"
+                            className={styles.image}
+                            width={600}
+                            height={400}
+                            style={{ width: '100%', height: 'auto' }}
+                        />
 
                         {/* Overlay UI Mockup */}
                         <div className={styles.glassOverlay}>

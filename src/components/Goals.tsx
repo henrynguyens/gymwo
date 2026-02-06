@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Goals.module.css';
 
@@ -12,13 +13,13 @@ const Goals = () => {
 
                 <div className={styles.grid}>
                     <div className={styles.card}>
-                        <img src="/images/hero-2.jpg" alt="Goal 1" className={styles.image} />
+                        <Image src="/images/hero-2.jpg" alt="Goal 1" className={styles.image} width={400} height={300} style={{ width: '100%', height: 'auto' }} />
                     </div>
                     <div className={styles.card}>
-                        <img src="/images/goals-1.jpg" alt="Goal 2" className={styles.image} />
+                        <Image src="/images/goals-1.jpg" alt="Goal 2" className={styles.image} width={400} height={300} style={{ width: '100%', height: 'auto' }} />
                     </div>
                     <div className={styles.card}>
-                        <img src="/images/programs-1.jpg" alt="Goal 3" className={styles.image} />
+                        <Image src="/images/programs-1.jpg" alt="Goal 3" className={styles.image} width={400} height={300} style={{ width: '100%', height: 'auto' }} />
                     </div>
                 </div>
             </div>

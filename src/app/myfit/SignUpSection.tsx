@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Mail, Lock, Eye } from 'lucide-react';
 import styles from './MyFit.module.css';
 
@@ -49,10 +50,13 @@ export default function SignUpSection() {
                         <h2 className={styles.heroText}>Happiness for Your Little One</h2>
                         <div className={styles.pillBadge}>Slime</div>
                     </div>
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1596464716127-f9a0859b03ca?q=80&w=2000&auto=format&fit=crop"
                         alt="Happiness for your little one"
                         className={styles.heroImage}
+                        width={1000}
+                        height={1000}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                 </div>
             </div>

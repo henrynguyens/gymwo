@@ -1,5 +1,6 @@
 import styles from './Plan.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PlanPage() {
     return (
@@ -10,10 +11,13 @@ export default function PlanPage() {
                 <section className={styles.hero}>
                     <div className={styles.heroImageContainer}>
                         {/* Placeholder for Mother & Baby Image */}
-                        <img
+                        <Image
                             src="/images/hero-new.png"
                             alt="Mother and baby exercising"
                             className={styles.heroImage}
+                            width={600}
+                            height={400}
+                            priority
                         />
                     </div>
 

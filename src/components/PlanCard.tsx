@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { Share, MoreHorizontal, Star, Flame } from 'lucide-react';
-import styles from '../app/plan/DailyPlan.module.css';
+import styles from '../app/plan/Plan.module.css';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface PlanCardProps {
@@ -36,7 +37,15 @@ export default function PlanCard({
                     {/* Placeholder for image if not provided */}
                     <div className={styles.coachImage} style={{ backgroundColor: '#E0E0E0' }} >
                         {/* If we had "next/image", we'd use it here. For now, empty div or img tag */}
-                        {coachImage && <img src={coachImage} alt={coachName} className={styles.coachImage} />}
+                        {coachImage && (
+                            <Image
+                                src={coachImage}
+                                alt={coachName}
+                                className={styles.coachImage}
+                                width={40}
+                                height={40}
+                            />
+                        )}
                     </div>
                     <div className={styles.coachName}>
                         {t.planCard.coach}
