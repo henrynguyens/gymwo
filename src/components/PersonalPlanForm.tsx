@@ -7,6 +7,8 @@ import { PlanData } from '@/types';
 
 import { useLanguage } from '@/context/LanguageContext';
 
+import { useAuth } from '@/context/AuthContext';
+
 interface PersonalPlanFormProps {
     onAnalysisComplete: (data: PlanData) => void;
     onLoadingChange?: (loading: boolean) => void;
@@ -14,14 +16,21 @@ interface PersonalPlanFormProps {
 
 export default function PersonalPlanForm({ onAnalysisComplete, onLoadingChange }: PersonalPlanFormProps) {
     const { t, language } = useLanguage();
+    const { user } = useAuth(); // Get user from auth context
+
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    // Initialize form data with user metadata if available, otherwise fallback to defaults
     const [formData, setFormData] = useState({
-        age: 33,
-        gender: 'Female (Postpartum)',
-        height: 155,
-        currentWeight: 54,
-        targetWeight: 49,
+        age: user?.user_metadata?.age ? Number(user.user_metadata.age) : 33,
+        // Map simplified gender to form options if needed, or default to Postpartum for demo
+        gender: user?.user_metadata?.gender === 'female' ? 'Female (Postpartum)' :
+            user?.user_metadata?.gender === 'male' ? 'Male' :
+                user?.user_metadata?.gender ? user.user_metadata.gender : 'Female (Postpartum)',
+        height: user?.user_metadata?.height ? Number(user.user_metadata.height) : 155,
+        currentWeight: user?.user_metadata?.weight ? Number(user.user_metadata.weight) : 54,
+        targetWeight: user?.user_metadata?.weight ? Number(user.user_metadata.weight) - 5 : 49, // Auto-suggest target
         preferences: ['Zumba', 'Yoga', 'Vietnamese Cuisine'],
         focusArea: 'Belly fat reduction and core strengthening'
     });
