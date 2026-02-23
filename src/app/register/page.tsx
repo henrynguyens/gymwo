@@ -10,6 +10,7 @@ export default function RegisterPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState({
+        fullName: '',
         email: '',
         password: '',
         gender: 'female',
@@ -38,6 +39,7 @@ export default function RegisterPage() {
                 password: formData.password,
                 options: {
                     data: {
+                        full_name: formData.fullName,
                         gender: formData.gender,
                         age: formData.age,
                         height: formData.height,
@@ -77,6 +79,19 @@ export default function RegisterPage() {
                 }}>{error}</div>}
 
                 <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Full Name</label>
+                        <input
+                            type="text"
+                            name="fullName"
+                            required
+                            className={styles.input}
+                            placeholder="Your name"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                        />
+                    </div>
+
                     <div className={styles.formGroup}>
                         <label className={styles.label}>Email</label>
                         <input

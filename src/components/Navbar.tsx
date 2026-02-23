@@ -65,7 +65,7 @@ const Navbar = () => {
                     {user ? (
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                             <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#000' }}>
-                                {user.email?.split('@')[0]}
+                                {user?.user_metadata?.full_name || user?.email?.split('@')[0]}
                             </span>
                             <button
                                 onClick={signOut}

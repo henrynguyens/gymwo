@@ -124,7 +124,7 @@ export default function MyFit() {
                 <section className={styles.welcomeSection}>
                     <div>
                         <h1 className={styles.welcomeTitle}>
-                            Good morning, Sabrina! ☀️
+                            Good morning, {user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User'}! ☀️
                         </h1>
                         <p className={styles.subTitle}>You&apos;re making incredible progress. Here is your plan for today.</p>
                     </div>
