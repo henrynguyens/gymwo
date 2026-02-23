@@ -98,8 +98,8 @@ JSON Schema (DO NOT CHANGE):
       method: "POST",
       headers: {
         "Authorization": `Bearer ${apiKey}`,
-        "HTTP-Referer": "http://localhost:3000",
-        "X-Title": "FItme",
+        "HTTP-Referer": process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : "https://gymwo.vercel.app",
+        "X-Title": "GYMWO",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -116,14 +116,17 @@ JSON Schema (DO NOT CHANGE):
     if (!response.ok) {
       const errorBody = await response.text();
       console.error('OpenRouter API Error:', response.status, errorBody);
-      throw new Error(`OpenRouter API Error: ${response.status} - ${errorBody}`);
+      return NextResponse.json(
+        { error: `AI Provider Error: ${response.status}`, details: errorBody },
+        { status: response.status }
+      );
     }
 
     const data = await response.json();
 
     if (!data.choices || !data.choices[0] || !data.choices[0].message) {
       console.error('Unexpected OpenRouter response format:', data);
-      throw new Error('Invalid response format from OpenRouter');
+      throw new Error('Invalid response format from AI Provider');
     }
 
     const content = data.choices[0].message.content;
@@ -153,9 +156,9 @@ JSON Schema (DO NOT CHANGE):
 
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    console.error('SERVER ERROR generating plan:', error);
+    console.error('SERVER ERROR generating plan:', errorMessage);
     return NextResponse.json(
-      { error: 'Failed to generate plan: ' + errorMessage, details: JSON.stringify(error) },
+      { error: 'Failed to generate plan: ' + errorMessage },
       { status: 500 }
     );
   }
